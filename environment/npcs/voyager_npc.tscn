@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://environment/animations/voyager_idle.tres" type="Animation" id=1]
+[ext_resource path="res://environment/animations/voyager_sit.tres" type="Animation" id=2]
+[ext_resource path="res://environment/animations/voyager_walk.tres" type="Animation" id=3]
+[ext_resource path="res://environment/assets/voyager.tscn" type="PackedScene" id=4]
+
+[node name="voyager_npc" type="Spatial"]
+
+[node name="voyager" parent="." instance=ExtResource( 4 )]
+
+[node name="voyagerAnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../voyager")
+autoplay = "voyager_sit"
+anims/voyager_idle = ExtResource( 1 )
+anims/voyager_sit = ExtResource( 2 )
+anims/voyager_walk = ExtResource( 3 )

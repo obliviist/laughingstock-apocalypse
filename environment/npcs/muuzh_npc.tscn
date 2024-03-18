@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://environment/animations/muuzh_walk.tres" type="Animation" id=1]
+[ext_resource path="res://environment/assets/muuzh.tscn" type="PackedScene" id=2]
+[ext_resource path="res://environment/animations/muuzh_idle.tres" type="Animation" id=3]
+
+[node name="muuzh_npc" type="Spatial"]
+
+[node name="muuzh" parent="." instance=ExtResource( 2 )]
+
+[node name="muuzhAnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../muuzh")
+autoplay = "muuzh_idle"
+anims/muuzh_idle = ExtResource( 3 )
+anims/muuzh_walk = ExtResource( 1 )

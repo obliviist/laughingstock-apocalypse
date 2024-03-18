@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://environment/animations/tracker_walk.tres" type="Animation" id=1]
+[ext_resource path="res://environment/animations/tracker_idle.tres" type="Animation" id=2]
+[ext_resource path="res://environment/animations/tracker_sit.tres" type="Animation" id=3]
+[ext_resource path="res://environment/assets/tracker.tscn" type="PackedScene" id=4]
+
+[node name="tracker_npc" type="Spatial"]
+
+[node name="tracker" parent="." instance=ExtResource( 4 )]
+
+[node name="trackerAnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../tracker")
+autoplay = "tracker_sit"
+anims/tracker_idle = ExtResource( 2 )
+anims/tracker_sit = ExtResource( 3 )
+anims/tracker_walk = ExtResource( 1 )

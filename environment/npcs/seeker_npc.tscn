@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://environment/animations/seeker_idle.tres" type="Animation" id=1]
+[ext_resource path="res://environment/animations/seeker_walk.tres" type="Animation" id=2]
+[ext_resource path="res://environment/animations/seeker_sit.tres" type="Animation" id=3]
+[ext_resource path="res://environment/assets/seeker.tscn" type="PackedScene" id=4]
+
+[node name="seeker_npc" type="Spatial"]
+
+[node name="seeker" parent="." instance=ExtResource( 4 )]
+
+[node name="seekerAnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../seeker")
+autoplay = "seeker_sit"
+anims/seeker_idle = ExtResource( 1 )
+anims/seeker_sit = ExtResource( 3 )
+anims/seeker_walk = ExtResource( 2 )

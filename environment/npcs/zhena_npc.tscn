@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://environment/animations/zhena_idle.tres" type="Animation" id=1]
+[ext_resource path="res://environment/assets/zhena.tscn" type="PackedScene" id=2]
+
+[node name="zhena_npc" type="Spatial"]
+
+[node name="zhena" parent="." instance=ExtResource( 2 )]
+
+[node name="zhenaAnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../zhena")
+autoplay = "zhena_idle"
+anims/zhena_idle = ExtResource( 1 )
